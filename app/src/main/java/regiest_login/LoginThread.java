@@ -10,7 +10,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLEncoder;
+
+import beanclass.UserBeanClass;
 
 /**
  * Created by Administrator on 2016/7/21.

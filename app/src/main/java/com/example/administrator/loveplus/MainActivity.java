@@ -80,8 +80,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         mFragmentList.add(settingFragment);
         mFragmentAdapter = new FragmentAdapter(this.getSupportFragmentManager(), mFragmentList);
         viewPager.setAdapter(mFragmentAdapter);
-        viewPager.setCurrentItem(2);
-        homeTV.setTextColor(Color.BLUE);
+        viewPager.setCurrentItem(0);
+        messageTV.setTextColor(Color.BLUE);
     }
 
     private void initView() {

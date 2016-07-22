@@ -12,6 +12,8 @@ import android.widget.EditText;
 
 import com.example.administrator.loveplus.R;
 
+import beanclass.UserBeanClass;
+
 /**
  * Created by Administrator on 2016/7/21.
  */

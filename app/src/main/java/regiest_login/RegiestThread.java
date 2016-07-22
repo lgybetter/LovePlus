@@ -12,6 +12,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import beanclass.UserBeanClass;
+
 /**
  * Created by Administrator on 2016/7/21.
  */
