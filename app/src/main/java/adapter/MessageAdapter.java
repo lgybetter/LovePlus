@@ -25,7 +25,9 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     }
     @Override
     public MessageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        MessageViewHolder messageViewHolder = new MessageViewHolder(LayoutInflater.
+        MessageViewHolder messageViewHolder = (MessageViewHolder) parent.getTag();
+        if(messageViewHolder == null)
+            messageViewHolder = new MessageViewHolder(LayoutInflater.
                 from(context).inflate(R.layout.activity_tab_message_item,parent,false));
         return messageViewHolder;
     }

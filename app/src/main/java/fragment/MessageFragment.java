@@ -1,9 +1,8 @@
 package fragment;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -17,6 +16,7 @@ import java.util.List;
 
 import adapter.MessageAdapter;
 import beanclass.MessageBeanClass;
+import customview.DividerItemDecoration;
 
 /**
  * Created by Administrator on 2016/7/21.
@@ -43,10 +43,12 @@ public class MessageFragment extends Fragment {
         adapter = new MessageAdapter(getContext(),messageList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
+        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL_LIST));
         return messageView;
     }
 
     private void initData() {
+        messageList.clear();
         for(int i = 0; i < 3 ; i++) {
             //Bitmap bitmap = BitmapFactory.decodeResource(getResources(),imageTest[i]);
             String name = nameTest[i];

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="72dp"
+    android:layout_height="56dp"
     android:gravity="center_vertical"
     android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
     android:layout_marginRight="@dimen/activity_horizontal_margin"
     android:layout_marginLeft="@dimen/activity_horizontal_margin">
     <ImageView
-        android:src="@drawable/user"
+        android:src="@drawable/userimagetest"
         android:id="@+id/iv_user_image"
         android:layout_width="56dp"
         android:layout_height="56dp" />
