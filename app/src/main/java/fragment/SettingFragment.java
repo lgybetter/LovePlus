@@ -11,13 +11,12 @@ import com.example.administrator.loveplus.R;
 /**
  * Created by Administrator on 2016/7/21.
  */
-public class ChatFragment extends Fragment {
-
+public class SettingFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         super.onCreateView(inflater, container, savedInstanceState);
-        View chatView = inflater.inflate(R.layout.activity_tab_chat, container,false);
-        return chatView;
+        View settingView = inflater.inflate(R.layout.activity_tab_setting, container,false);
+        return settingView;
     }
 
 

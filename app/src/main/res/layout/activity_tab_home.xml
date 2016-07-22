@@ -7,8 +7,8 @@
 	<TextView
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent"
-	    android:text="聊天界面"
-	    android:textColor="#FF0000"
+	    android:text="家庭分享界面"
+	    android:textColor="#00FF00"
 	    android:textSize="20sp"
 	    android:gravity="center"
 	    ></TextView>

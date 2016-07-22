@@ -7,4 +7,9 @@
     <string name="bn_login">登陆</string>
     <string name="et_user_name">名称</string>
     <string name="bn_click_regiest">点击注册</string>
+    <string name="tab_message">信息</string>
+    <string name="tab_user">联系人</string>
+    <string name="tab_share">家庭分享</string>
+    <string name="tab_agreement">资讯</string>
+    <string name="tab_setting">设置</string>
 </resources>
