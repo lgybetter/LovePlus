@@ -15,7 +15,7 @@ import java.util.List;
 import adapter.FragmentAdapter;
 import fragment.AgreementFragment;
 import fragment.MessageFragment;
-import fragment.ContactsFragment;
+import fragment.ContactFragment;
 import fragment.HomeFragment;
 import fragment.SettingFragment;
 
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
      */
     private MessageFragment messageFragment;
     private HomeFragment homeFragment;
-    private ContactsFragment contactsFragment;
+    private ContactFragment contactsFragment;
     private AgreementFragment agreementFragment;
     private SettingFragment settingFragment;
 
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     private void initFragment() {
         homeFragment = new HomeFragment();
-        contactsFragment = new ContactsFragment();
+        contactsFragment = new ContactFragment();
         messageFragment = new MessageFragment();
         agreementFragment = new AgreementFragment();
         settingFragment = new SettingFragment();

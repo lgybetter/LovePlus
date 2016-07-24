@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="100dp"
+    android:background="@drawable/card_background"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:gravity="center_horizontal"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/iv_contacts_item"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        android:src="@drawable/user"
+        android:layout_width="80dp"
+        android:layout_height="100dp" />
+    <TextView
+        android:id="@+id/tv_contacts_name"
+        android:text="TOM"
+        android:textSize="14sp"
+        android:layout_marginBottom="2dp"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <!--<LinearLayout-->
+        <!--android:layout_margin="4dp"-->
+        <!--android:gravity="center_horizontal"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="20dp">-->
+        <!--<Button-->
+            <!--android:background="@drawable/chat"-->
+            <!--android:id="@+id/bn_send_message"-->
+            <!--android:layout_marginRight="5dp"-->
+            <!--android:layout_width="20dp"-->
+            <!--android:layout_height="20dp" />-->
+        <!--<Button-->
+            <!--android:background="@drawable/phone"-->
+            <!--android:id="@+id/bn_start_phone"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:layout_marginRight="5dp"-->
+            <!--android:layout_width="20dp"-->
+            <!--android:layout_height="20dp" />-->
+        <!--<Button-->
+            <!--android:background="@drawable/video"-->
+            <!--android:id="@+id/bn_start_video"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:layout_marginRight="5dp"-->
+            <!--android:layout_width="20dp"-->
+            <!--android:layout_height="20dp" />-->
+    <!--</LinearLayout>-->
+</LinearLayout>
