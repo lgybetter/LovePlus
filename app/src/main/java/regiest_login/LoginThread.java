@@ -3,6 +3,7 @@ package regiest_login;
 import android.content.Context;
 import android.os.Handler;
 import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -35,10 +36,7 @@ public class LoginThread extends Thread {
             URL httpUrl = new URL(url);
             HttpURLConnection connection = (HttpURLConnection) httpUrl.openConnection();
             connection.setRequestMethod("GET");
-            connection.setDoInput(true);
             connection.setReadTimeout(5000);
-            int code = connection.getResponseCode();
-            Log.d("info", String.valueOf(code));
             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             String str;
             StringBuffer stringBuffer = new StringBuffer();

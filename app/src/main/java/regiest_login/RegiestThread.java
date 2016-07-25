@@ -37,13 +37,9 @@ public class RegiestThread extends Thread {
             HttpURLConnection connection = (HttpURLConnection) httpUrl.openConnection();
             connection.setRequestMethod("POST");
             connection.setReadTimeout(5000);
-            connection.setDoOutput(true);
-            connection.setDoInput(true);
             OutputStream out = connection.getOutputStream();
-            String content = "phone=" + user.getPhone() + "&username=" + user.getUsernanme() + "&password=" + user.getPassword();
+            String content = "phone" + user.getPhone() + "&username" + user.getUsernanme() + "&password" + user.getPassword();
             out.write(content.getBytes());
-            int code = connection.getResponseCode();
-            Log.d("info", String.valueOf(code));
             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             StringBuffer stringBuffer = new StringBuffer();
             String str;
