@@ -46,11 +46,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
      * ViewPager的当前选中页
      */
     private int currentIndex = 0;
-    /**
-     * 屏幕的宽度
-     */
-    private int screenWidth;
-    //private FloatingActionButton fab;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,8 +55,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         setSupportActionBar(toolbar);
         initView();
         initFragment();
-        //initTabLineWidth();
-        //fab.setOnClickListener(this);
         viewPager.addOnPageChangeListener(this);
         messageLayout.setOnClickListener(this);
         contactsLayout.setOnClickListener(this);
@@ -87,13 +81,11 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     }
 
     private void initView() {
-        //fab = (FloatingActionButton) findViewById(R.id.fab);
         contactsTV = (TextView) findViewById(R.id.tv_contacts);
         messageTV = (TextView) findViewById(R.id.tv_message);
         homeTV = (TextView) findViewById(R.id.tv_home);
         agreementTV = (TextView) findViewById(R.id.tv_agreement);
         settingTV = (TextView) findViewById(R.id.tv_setting);
-        //mTabLineIv = (ImageView) this.findViewById(R.id.id_tab_line_iv);
         viewPager = (ViewPager) findViewById(R.id.id_page_vp);
         messageLayout = (LinearLayout) findViewById(R.id.ll_message);
         contactsLayout = (LinearLayout) findViewById(R.id.ll_contacts);
@@ -120,11 +112,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
             case R.id.ll_setting:
                 viewPager.setCurrentItem(4);
                 break;
-//            case R.id.fab:
-//                Intent intent = new Intent();
-//                intent.setClass(getApplicationContext(), RegiestLoginActivity.class);
-//                startActivity(intent);
-//                break;
             default:
                 break;
         }
@@ -132,8 +119,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     /**
      * 创建菜单栏
-     * @param menu
-     * @return
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -144,16 +129,10 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     /**
      * 菜单栏点击事件
-     * @param item
-     * @return
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        //noinspection SimplifiableIfStatement
         switch (id) {
             case R.id.action_add:
                 return true;
@@ -173,39 +152,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
      */
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-//        LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) mTabLineIv
-//                .getLayoutParams();
-//
-//        Log.e("offset:", positionOffset + "");
-//        /**
-//         * 利用currentIndex(当前所在页面)和position(下一个页面)以及offset来
-//         * 设置mTabLineIv的左边距 滑动场景：
-//         * 记3个页面,
-//         * 从左到右分别为0,1,2
-//         * 0->1; 1->2; 2->1; 1->0
-//         */
-//        if (currentIndex == 0 && position == 0)// 0->1
-//        {
-//            lp.leftMargin = (int) (positionOffset * (screenWidth * 1.0 / 3) + currentIndex
-//                    * (screenWidth / 3));
-//
-//        } else if (currentIndex == 1 && position == 0) // 1->0
-//        {
-//            lp.leftMargin = (int) (-(1 - positionOffset)
-//                    * (screenWidth * 1.0 / 3) + currentIndex
-//                    * (screenWidth / 3));
-//
-//        } else if (currentIndex == 1 && position == 1) // 1->2
-//        {
-//            lp.leftMargin = (int) (positionOffset * (screenWidth * 1.0 / 3) + currentIndex
-//                    * (screenWidth / 3));
-//        } else if (currentIndex == 2 && position == 1) // 2->1
-//        {
-//            lp.leftMargin = (int) (-(1 - positionOffset)
-//                    * (screenWidth * 1.0 / 3) + currentIndex
-//                    * (screenWidth / 3));
-//        }
-//        mTabLineIv.setLayoutParams(lp);
+
     }
 
     @Override
@@ -240,20 +187,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     public void onPageScrollStateChanged(int state) {
 
     }
-
-    /**
-     * 设置滑动条的宽度为屏幕的1/3(根据Tab的个数而定)
-     */
-//    private void initTabLineWidth() {
-//        DisplayMetrics dpMetrics = new DisplayMetrics();
-//        getWindow().getWindowManager().getDefaultDisplay()
-//                .getMetrics(dpMetrics);
-//        screenWidth = dpMetrics.widthPixels;
-//        LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) mTabLineIv
-//                .getLayoutParams();
-//        lp.width = screenWidth / 3;
-//        mTabLineIv.setLayoutParams(lp);
-//    }
 
     /**
      * 重置颜色

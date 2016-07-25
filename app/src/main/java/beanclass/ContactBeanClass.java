@@ -11,11 +11,11 @@ public class ContactBeanClass implements Serializable{
     private Boolean isFamily;
     private String  alias;
     private String description;
-    public ContactBeanClass(String userName,String phone,String alias,String description,Boolean isFamly) {
+    public ContactBeanClass(String userName,String phone,String alias,String description,Boolean isFamily) {
         this.alias = alias;
         this.description = description;
         this.phone = phone;
-        this.isFamily = isFamly;
+        this.isFamily = isFamily;
         this.userName = userName;
     }
 
@@ -35,11 +35,11 @@ public class ContactBeanClass implements Serializable{
         this.phone = phone;
     }
 
-    public Boolean getFamly() {
+    public Boolean getFamily() {
         return isFamily;
     }
 
-    public void setFamly(Boolean famly) {
+    public void setFamily(Boolean famly) {
         isFamily = famly;
     }
 

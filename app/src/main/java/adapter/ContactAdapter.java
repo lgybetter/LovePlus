@@ -32,6 +32,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactH
         ContactHolder contactHolder = (ContactHolder) parent.getTag();
         if(contactHolder == null) {
             contactHolder = new ContactHolder(LayoutInflater.from(context).inflate(R.layout.activity_tab_contacts_item,parent,false));
+            parent.setTag(contactHolder);
         }
         return contactHolder;
     }

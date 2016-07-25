@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="8dp"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp">
+        <ImageView
+            android:id="@+id/iv_share_video"
+            android:background="@drawable/test"
+            android:layout_width="match_parent"
+            android:layout_height="130dp" />
+        <Button
+            android:background="@drawable/bn_play"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <LinearLayout
+        android:background="@color/gray"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:id="@+id/tv_share_from_name"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:text="儿子"
+            android:textSize="16sp"
+            android:layout_width="60dp"
+            android:maxLines="1"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/tv_share_text"
+            android:layout_width="240dp"
+            android:textSize="15sp"
+            android:maxLines="1"
+            android:paddingLeft="5dp"
+            android:gravity="left|center_vertical"
+            android:text="今天是个悲伤的一天"
+            android:layout_height="match_parent" />
+        <Button
+            android:id="@+id/bn_share_enter"
+            android:layout_gravity="center_vertical"
+            android:layout_width="30dp"
+            android:background="@drawable/bn_enter"
+            android:layout_height="30dp" />
+    </LinearLayout>
+</LinearLayout>
