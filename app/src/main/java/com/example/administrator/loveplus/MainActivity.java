@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         switch (id) {
             case R.id.action_add:
                 return true;
-            case R.id.action_login:
+            case R.id.action_search:
                 Intent intent = new Intent();
                 intent.setClass(getApplicationContext(),RegiestLoginActivity.class);
                 startActivity(intent);

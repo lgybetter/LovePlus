@@ -3,16 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.administrator.loveplus.MainActivity">
     <item
-        android:id="@+id/action_login"
-        android:orderInCategory="101"
-        android:icon="@drawable/menu_login"
-        android:title="@string/action_login"
+        android:id="@+id/action_search"
+        android:orderInCategory="100"
+        android:icon="@drawable/menu_search"
+        android:title="@string/action_search"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/action_add"
-        android:orderInCategory="100"
+        android:orderInCategory="101"
         android:icon="@drawable/menu_add"
         android:title="@string/action_settings"
         app:showAsAction="ifRoom" />
-
 </menu>
