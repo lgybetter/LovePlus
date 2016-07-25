@@ -15,6 +15,7 @@ import java.net.URL;
 import beanclass.UserBeanClass;
 
 /**
+ * 注册请求服务器线程
  * Created by Administrator on 2016/7/21.
  */
 public class RegiestThread extends Thread {
@@ -23,10 +24,10 @@ public class RegiestThread extends Thread {
     private Context context;
     private Handler handler = null;
     public RegiestThread(String url,UserBeanClass user, Context context, Handler handler) {
-        url = this.url;
-        user = this.user;
-        context = this.context;
-        handler = this.handler;
+        this.url = url;
+        this.user = user;
+        this.context = context;
+        this.handler = handler;
     }
 
     @Override

@@ -12,4 +12,5 @@
     <string name="tab_share">家庭分享</string>
     <string name="tab_agreement">资讯</string>
     <string name="tab_setting">设置</string>
+    <string name="action_login">登陆</string>
 </resources>

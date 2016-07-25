@@ -21,7 +21,6 @@ public class RegiestActivity extends AppCompatActivity implements View.OnClickLi
     private EditText userPhone,userName,userPassword;
     private Button regiestClick;
     private UserBeanClass user = null;
-    private String url = null;
     private Handler handler;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,6 +45,7 @@ public class RegiestActivity extends AppCompatActivity implements View.OnClickLi
              * 点击注册按钮，向服务器进行数据请求
              */
             case R.id.bn_click_regiest:
+                String url = "http://kilerd-loveplus.daoapp.io/user";
                 String phone = userPhone.getText().toString();
                 String password = userPassword.getText().toString();
                 String name = userName.getText().toString();
@@ -54,13 +54,11 @@ public class RegiestActivity extends AppCompatActivity implements View.OnClickLi
                     /**
                      * 开启服务器请求线程
                      */
-                    //new RegiestThread(url,user,this,handler).start();
+                    new RegiestThread(url,user,this,handler).start();
 
                 } else {
-                    Snackbar snackbar = Snackbar.make(view,"请输入正确信息！",Snackbar.LENGTH_SHORT)
-                            .setAction("Action", null);
+                    Snackbar snackbar = Snackbar.make(view,"请输入正确信息！",Snackbar.LENGTH_SHORT).setAction("Action", null);
                     snackbar.show();
-                    Log.d("info","Login error");
                 }
                 break;
             default:

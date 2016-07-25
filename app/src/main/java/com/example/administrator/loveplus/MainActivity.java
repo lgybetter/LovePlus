@@ -1,4 +1,5 @@
 package com.example.administrator.loveplus;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import fragment.MessageFragment;
 import fragment.ContactFragment;
 import fragment.HomeFragment;
 import fragment.SettingFragment;
+import regiest_login.RegiestLoginActivity;
 
 
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener,View.OnClickListener{
@@ -128,6 +130,11 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         }
     }
 
+    /**
+     * 创建菜单栏
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -135,6 +142,11 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         return true;
     }
 
+    /**
+     * 菜单栏点击事件
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -142,10 +154,17 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id) {
+            case R.id.action_add:
+                return true;
+            case R.id.action_login:
+                Intent intent = new Intent();
+                intent.setClass(getApplicationContext(),RegiestLoginActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 
     /**

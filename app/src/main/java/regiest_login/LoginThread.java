@@ -14,6 +14,7 @@ import java.net.URL;
 import beanclass.UserBeanClass;
 
 /**
+ * 登陆请求服务器线程
  * Created by Administrator on 2016/7/21.
  */
 public class LoginThread extends Thread {
@@ -22,10 +23,10 @@ public class LoginThread extends Thread {
     private Handler handler = null;
     private Context context;
     public LoginThread(String url,UserBeanClass user, Context context, Handler handler) {
-        url = this.url;
-        user = this.user;
-        context = this.context;
-        handler = this.handler;
+        this.url = url;
+        this.user = user;
+        this.context = context;
+        this.handler = handler;
     }
 
     @Override
