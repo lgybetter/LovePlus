@@ -1,9 +1,11 @@
 package beanclass;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2016/7/25.
  */
-public class ShareContentBeanClass {
+public class ShareContentBeanClass implements Serializable{
     private String fromPerson;
     private String messageText;
     //此处应该定义一个视频的文件
