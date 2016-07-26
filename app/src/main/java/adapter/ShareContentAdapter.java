@@ -27,7 +27,6 @@ public class ShareContentAdapter extends RecyclerView.Adapter<ShareContentAdapte
         ShareContentHolder shareContentHolder = (ShareContentHolder) parent.getTag();
         if(shareContentHolder == null) {
             shareContentHolder = new ShareContentHolder(LayoutInflater.from(context).inflate(R.layout.activity_tab_home_share_item,parent,false));
-            parent.setTag(shareContentHolder);
         }
         return shareContentHolder;
     }
