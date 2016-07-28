@@ -31,6 +31,7 @@ public class ContactHolder extends RecyclerView.ViewHolder implements View.OnCli
 //            startPhone = (Button) itemView.findViewById(R.id.bn_start_phone);
 //            startVideo = (Button) itemView.findViewById(R.id.bn_start_video);
         contactName = (TextView) itemView.findViewById(R.id.tv_contacts_name);
+        itemView.setBackgroundResource(R.drawable.recycle_view_card_background);
         itemView.setOnClickListener(this);
         itemView.setOnLongClickListener(this);
     }

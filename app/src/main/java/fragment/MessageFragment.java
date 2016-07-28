@@ -1,5 +1,6 @@
 package fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -15,6 +16,8 @@ import com.example.administrator.loveplus.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import activity.ChattingActivity;
+import adapter.ChattingMessageAdapter;
 import adapter.MessageAdapter;
 import beanclass.MessageBeanClass;
 import customview.DividerItemDecoration;
@@ -53,7 +56,7 @@ public class MessageFragment extends Fragment implements MyItemClickListener, My
             String name = nameTest[i];
             String message = messageTest[i];
             String time = timeTest[i];
-            messageBean = new MessageBeanClass(name,message,time);
+            messageBean = new MessageBeanClass(name,message,time,0);
             messageList.add(messageBean);
         }
         adapter = new MessageAdapter(getContext(),messageList);
@@ -77,7 +80,9 @@ public class MessageFragment extends Fragment implements MyItemClickListener, My
     public void onItemClick(View view, int postion) {
         MessageBeanClass messageBeanClass = messageList.get(postion);
         if(messageBeanClass != null) {
-            Toast.makeText(getContext(),"onItemClick" + postion,Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent();
+            intent.setClass(getContext(), ChattingActivity.class);
+            startActivity(intent);
         }
     }
 

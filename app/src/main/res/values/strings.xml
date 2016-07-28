@@ -14,4 +14,5 @@
     <string name="tab_setting">设置</string>
     <string name="action_login">登陆</string>
     <string name="action_search">搜索</string>
+    <string name="voice_press">按住说话</string>
 </resources>

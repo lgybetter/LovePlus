@@ -28,6 +28,7 @@ public class MessageViewHolder extends RecyclerView.ViewHolder implements View.O
         time = (TextView) itemView.findViewById(R.id.tv_time);
         name = (TextView) itemView.findViewById(R.id.tv_user_name);
         message = (TextView) itemView.findViewById(R.id.tv_user_message);
+        itemView.setBackgroundResource(R.drawable.recycler_view_background);
         itemView.setOnClickListener(this);
         itemView.setOnLongClickListener(this);
     }

@@ -9,12 +9,14 @@ import java.io.Serializable;
  */
 public class MessageBeanClass implements Serializable{
     private String name;
+    private int type;
     private String time;
     private String messageText;
-    public MessageBeanClass(String name ,String messageText,String time) {
+    public MessageBeanClass(String name ,String messageText,String time,int type) {
         this.name = name;
         this.messageText = messageText;
         this.time = time;
+        this.type = type;
     }
     public String getName() {
         return name;
@@ -38,5 +40,13 @@ public class MessageBeanClass implements Serializable{
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 }
