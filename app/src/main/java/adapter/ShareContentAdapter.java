@@ -9,15 +9,20 @@ import android.widget.TextView;
 import com.example.administrator.loveplus.R;
 import java.util.List;
 import beanclass.ShareContentBeanClass;
+import eventInterface.MyItemClickListener;
+import eventInterface.MyItemLongClickListener;
+import holder.ShareContentHolder;
 
 /**
  * Created by Administrator on 2016/7/25.
  */
-public class ShareContentAdapter extends RecyclerView.Adapter<ShareContentAdapter.ShareContentHolder> {
+public class ShareContentAdapter extends RecyclerView.Adapter<ShareContentHolder> {
     //上下文引入
     private Context context;
     //保存对象的信息列表
     private List<ShareContentBeanClass> dataList;
+    private MyItemClickListener mItemClickListener;
+    private MyItemLongClickListener mItemLongClickListener;
     public ShareContentAdapter(Context context,List<ShareContentBeanClass> dataList) {
         this.context = context;
         this.dataList = dataList;
@@ -26,7 +31,9 @@ public class ShareContentAdapter extends RecyclerView.Adapter<ShareContentAdapte
     public ShareContentHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         ShareContentHolder shareContentHolder = (ShareContentHolder) parent.getTag();
         if(shareContentHolder == null) {
-            shareContentHolder = new ShareContentHolder(LayoutInflater.from(context).inflate(R.layout.activity_tab_home_share_item,parent,false));
+            shareContentHolder = new ShareContentHolder(LayoutInflater.from(context).
+                    inflate(R.layout.activity_tab_home_share_item,parent,false),
+                    mItemClickListener,mItemLongClickListener);
         }
         return shareContentHolder;
     }
@@ -42,12 +49,11 @@ public class ShareContentAdapter extends RecyclerView.Adapter<ShareContentAdapte
         return dataList.size();
     }
 
-    public class ShareContentHolder extends RecyclerView.ViewHolder {
-        TextView fromName , shareText;
-        public ShareContentHolder(View itemView) {
-            super(itemView);
-            fromName = (TextView) itemView.findViewById(R.id.tv_share_from_name);
-            shareText = (TextView) itemView.findViewById(R.id.tv_share_text);
-        }
+    public void setOnItemClickListener(MyItemClickListener listener){
+        this.mItemClickListener = listener;
+    }
+
+    public void setOnItemLongClickListener(MyItemLongClickListener listener){
+        this.mItemLongClickListener = listener;
     }
 }

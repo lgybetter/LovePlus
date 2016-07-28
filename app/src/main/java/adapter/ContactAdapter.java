@@ -14,15 +14,21 @@ import com.example.administrator.loveplus.R;
 import java.util.List;
 
 import beanclass.ContactBeanClass;
+import eventInterface.MyItemClickListener;
+import eventInterface.MyItemLongClickListener;
+import holder.ContactHolder;
 
 /**
  * Created by Administrator on 2016/7/23.
  */
-public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactHolder> {
+public class ContactAdapter extends RecyclerView.Adapter<ContactHolder> {
     //保存对象的信息列表
     private List<ContactBeanClass> dataList;
     //上下文引入
     Context context;
+    private MyItemClickListener mItemClickListener;
+    private MyItemLongClickListener mItemLongClickListener;
+
     public ContactAdapter(Context context,List<ContactBeanClass> dataList) {
         this.context = context;
         this.dataList = dataList;
@@ -31,7 +37,9 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactH
     public ContactHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         ContactHolder contactHolder = (ContactHolder) parent.getTag();
         if(contactHolder == null) {
-            contactHolder = new ContactHolder(LayoutInflater.from(context).inflate(R.layout.activity_tab_contacts_item,parent,false));
+            contactHolder = new ContactHolder(LayoutInflater.from(context).
+                    inflate(R.layout.activity_tab_contacts_item,parent,false),
+                    mItemClickListener,mItemLongClickListener);
         }
         return contactHolder;
     }
@@ -46,16 +54,11 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactH
         return dataList.size();
     }
 
-    public class ContactHolder extends RecyclerView.ViewHolder {
-        private TextView contactName;
-        private ImageView contactImage;
-//        private Button sendSms,startPhone,startVideo;
-        public ContactHolder(View itemView) {
-            super(itemView);
-//            sendSms = (Button) itemView.findViewById(R.id.bn_send_message);
-//            startPhone = (Button) itemView.findViewById(R.id.bn_start_phone);
-//            startVideo = (Button) itemView.findViewById(R.id.bn_start_video);
-            contactName = (TextView) itemView.findViewById(R.id.tv_contacts_name);
-        }
+    public void setOnItemClickListener(MyItemClickListener listener){
+        this.mItemClickListener = listener;
+    }
+
+    public void setOnItemLongClickListener(MyItemLongClickListener listener){
+        this.mItemLongClickListener = listener;
     }
 }
